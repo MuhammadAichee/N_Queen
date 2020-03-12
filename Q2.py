@@ -144,6 +144,6 @@ for i in range (rowcol):
         if(visited[i][j]==1):
             visited[i][j]='Q'
         else:
-            visited[i][j]="-"    
-        print(visited[i][j],end=" ")
+            visited[i][j]="#"    
+        print(visited[i][j],end="  ")
     print("\n")     
