@@ -102,46 +102,48 @@ Matrix = [[0 for x in range(rowcol)] for y in range(rowcol)]
 i=0
 j=0
 while(j<rowcol):
-    print("For Jth column: ",j)
+    # print("For Jth column: ",j)
     while(i<rowcol):
-        if((i,j) not in false_position and j not in array):
-            print("---------------------\nChecking for ",i,j,"\n")
+        if(j not in array):
+            # print("---------------------\nChecking for ",i,j,"\n")
             checkdiagonal=checkDiagonal(i,j,visited,rowcol)
             checkcol=checkCol(i,j,visited,rowcol)
             if(checkcol==0 and checkdiagonal==0):
                 Matrix[i][j]=1
                 visited[i][j]=1
                 stack.append((i,j))
-                print("Marking value: ",i,j)
-                # markDiagonal(i,j,visited,rowcol)
-                # markRow(i,j,visited,rowcol)
+                # print("Marking value: ",i,j)
                 array.append(j)
                 break
         i=i+1        
-    print("Array: ",array)
-    print("False Position: ",false_position)
+    # print("Array: ",array)
+    # print("False Position: ",false_position)
     a=len(array)
+    # print("Value of j in line 124: ",j)
     if(array[a-1]!=j):
-        print("a-1: ", array[a-1]," j: ",j)
+        # print("a-1: ", array[a-1]," j: ",j)
         false_i, false_j= stack.pop()
-        false_position.append((false_i,false_j))
-        print("if ke ander: ",false_i,false_j)
+        # print("if ke ander: ",false_i,false_j)
         Matrix[false_i][false_j]=0
         visited[false_i][false_j]=0
         array.pop()
-        j=j-1
-        i=0                
+        i=false_i+1
+        j=false_j                
     else:
         j=j+1
         i=0    
+# for i in range (rowcol):
+#     for j in range (rowcol):
+#         print(Matrix[i][j],end=" ")
+#     print("\n")               
+
+# print("----------------")
+
 for i in range (rowcol):
     for j in range (rowcol):
-        print(Matrix[i][j],end=" ")
-    print("\n")               
-
-print("----------------")
-
-for i in range (rowcol):
-    for j in range (rowcol):
+        if(visited[i][j]==1):
+            visited[i][j]='Q'
+        else:
+            visited[i][j]="-"    
         print(visited[i][j],end=" ")
     print("\n")     
