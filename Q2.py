@@ -93,6 +93,7 @@ rowcol=input("Enter size of Matrix: ")
 rowcol=int(rowcol)
 stack=[]
 array=[]
+count=0
 false_position=[]
 visited = [[0 for x in range(rowcol)] for y in range(rowcol)] 
 Matrix = [[0 for x in range(rowcol)] for y in range(rowcol)]
@@ -102,7 +103,7 @@ Matrix = [[0 for x in range(rowcol)] for y in range(rowcol)]
 i=0
 j=0
 while(j<rowcol):
-    # print("For Jth column: ",j)
+    print("For Jth column: ",j)
     while(i<rowcol):
         if(j not in array):
             # print("---------------------\nChecking for ",i,j,"\n")
@@ -132,6 +133,7 @@ while(j<rowcol):
     else:
         j=j+1
         i=0    
+    count=count+1
 # for i in range (rowcol):
 #     for j in range (rowcol):
 #         print(Matrix[i][j],end=" ")
@@ -146,4 +148,5 @@ for i in range (rowcol):
         else:
             visited[i][j]="#"    
         print(visited[i][j],end="  ")
-    print("\n")     
+    print("\n") 
+# print("Count: ",count)        
