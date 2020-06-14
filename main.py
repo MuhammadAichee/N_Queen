@@ -1,20 +1,8 @@
-# def checkRow(i,j,visited,rowcol):
-#     a=0
-#     b=j
-#     flag=0
-#     while(a<rowcol):
-#         if(visited[a][b]==1):
-#             flag=1
-#             break
-#         a=a+1
-#     print("value of a: ",a)        
-#     return flag
 def checkDiagonal(i,j,visited,rowcol):
     a=i
     b=j
     flag=0
     while(b<rowcol and a<rowcol):
-        # print("Value of a and b: ",a,b,"Visited: ",visited[a][b])
         if(visited[a][b]==1):
             flag=1
             break
@@ -23,7 +11,6 @@ def checkDiagonal(i,j,visited,rowcol):
     a=i
     b=j
     while(a>=0 and b>=0):
-        # print("Value of a and b: ",a,b,"Visited: ",visited[a][b])
         if(visited[a][b]==1):
             flag=1
             break
@@ -32,7 +19,6 @@ def checkDiagonal(i,j,visited,rowcol):
     a=i
     b=j
     while(b<rowcol and a>=0):
-        # print("Value of a and b: ",a,b,"Visited: ",visited[a][b])
         if(visited[a][b]==1):
             flag=1
             break
@@ -41,7 +27,6 @@ def checkDiagonal(i,j,visited,rowcol):
     a=i
     b=j
     while(a<rowcol and b>=0):
-        # print("Value of a and b: ",a,b,"Visited: ",visited[a][b])
         if(visited[a][b]==1):
             flag=1
             break
@@ -103,7 +88,6 @@ Matrix = [[0 for x in range(rowcol)] for y in range(rowcol)]
 i=0
 j=0
 while(j<rowcol):
-    print("For Jth column: ",j)
     while(i<rowcol):
         if(j not in array):
             # print("---------------------\nChecking for ",i,j,"\n")
